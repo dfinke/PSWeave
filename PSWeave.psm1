@@ -1,0 +1,1 @@
+Get-ChildItem $PSScriptRoot\Public | ForEach-Object { . $_.FullName }
