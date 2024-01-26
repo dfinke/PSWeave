@@ -1,16 +1,6 @@
 # PSWeave - Human Augmentor
 ![Alt text](media/psweave.png)
 
-Inspired by this Python implementation https://github.com/danielmiessler/fabric. Bootstrapped with the prompts from that repo.
-
-## Requirements
-- `Install-Module PowerShellAIAssistant` - PowerShell integration to OpenAI 
-- OpenAI API key
-
-    First, create an [OpenAI account](https://platform.openai.com/signup) or [sign in](https://platform.openai.com/login). Next, navigate to the [API key page](https://platform.openai.com/account/api-keys) and "Create new secret key", optionally naming the key. Make sure to save this somewhere safe and do not share it with anyone.
-
-    Then set the environment variable to the key:`$env:OpenAIKey='sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'`
-
 ## In Action
 There are 27 ready to go functions with prompts that you can pipe to.
 
@@ -29,7 +19,17 @@ All controlled via the prompt, that you can tweak.
 
 ![Alt text](media/PSWeave-release.gif)
 
-## Get Augmented
+Inspired by this Python implementation https://github.com/danielmiessler/fabric. Bootstrapped with the prompts from that repo.
+
+## Requirements
+- `Install-Module PowerShellAIAssistant` - PowerShell integration to OpenAI 
+- OpenAI API key
+
+    First, create an [OpenAI account](https://platform.openai.com/signup) or [sign in](https://platform.openai.com/login). Next, navigate to the [API key page](https://platform.openai.com/account/api-keys) and "Create new secret key", optionally naming the key. Make sure to save this somewhere safe and do not share it with anyone.
+
+    Then set the environment variable to the key:`$env:OpenAIKey='sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'`
+
+## Are You Augmented?
 
 Let's see what you build.
 
