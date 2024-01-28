@@ -1,4 +1,4 @@
-# PSWeave - Human Augmentor
+# PSWeave - Innovating automation
 ![Alt text](media/psweave.png)
 
 ## In Action
