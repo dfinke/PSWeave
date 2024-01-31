@@ -3,8 +3,6 @@ $functions = Get-ChildItem .\instructions -Recurse instructions.md | Select-Obje
     $name = Split-Path -Leaf $dir
 
     $NewName = $name -split '_' | ForEach-Object {
-        # title case string
-
         $_.Substring(0, 1).ToUpper() + $_.Substring(1).ToLower()
     }
 
