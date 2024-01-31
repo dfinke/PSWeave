@@ -7,7 +7,7 @@
     Copyright         = 'c 2024 All rights reserved.'
 
     Description       = @'
-PowerShell module that augments humans with AI to make them more productive
+PowerShell module that innovates automation with AI to make you more productive
 '@
 
     # Modules that must be imported into the global environment prior to importing this module
@@ -30,8 +30,7 @@ PowerShell module that augments humans with AI to make them more productive
         'ExplainCode'
         'ExtractPoc'
         'ExtractSponsors'
-        'ExtractVideoid'
-        'ExtractWisdom-1'
+        'ExtractVideoid' 
         'ExtractWisdom'
         'ImprovePrompt'
         'Philocapsulate'
