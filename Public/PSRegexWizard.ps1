@@ -1,4 +1,4 @@
-function PSRegexWizard {
+function PsRegexWizard {
     param(
         [Parameter(ValueFromPipeline)]
         $UserInput
@@ -13,6 +13,7 @@ As the 'PowerShell Regex Wizard', your role is to assist with creating and testi
 Don't clarify. Please generate regex and powershell.
 - No usage info or explanations are needed
 - Just the code
+
 "@
         $lines | Invoke-OAIChat $instructions
     }

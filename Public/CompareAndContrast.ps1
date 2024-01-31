@@ -7,7 +7,11 @@ function CompareAndContrast {
     Process { $lines += @($UserInput) }
 
     End {
-        $instructions = "Pls be brief. Compare and contrast, pls put it into a markdown table"
+        $instructions = @"
+# IDENTITY and PURPOSE
+
+Pls be brief. Compare and contrast, pls put it into a markdown table
+"@
         $lines | Invoke-OAIChat $instructions
     }
 }
