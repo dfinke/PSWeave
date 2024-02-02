@@ -1,4 +1,4 @@
-function ExtractPoc {
+function AgileStory {
     param(
         [Parameter(ValueFromPipeline)]
         $UserInput,
@@ -9,7 +9,7 @@ function ExtractPoc {
 
     End {
 
-        $instructionsFile = "$PSScriptRoot\..\instructions\extract_poc\instructions.md"
+        $instructionsFile = "$PSScriptRoot\..\instructions\agile_story\instructions.md"
 
         $instructions = Get-Content $instructionsFile -Raw
 

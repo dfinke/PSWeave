@@ -1,4 +1,4 @@
-function ExtractPoc {
+function MsGraphWizard {
     param(
         [Parameter(ValueFromPipeline)]
         $UserInput,
@@ -9,7 +9,7 @@ function ExtractPoc {
 
     End {
 
-        $instructionsFile = "$PSScriptRoot\..\instructions\extract_poc\instructions.md"
+        $instructionsFile = "$PSScriptRoot\..\instructions\ms_graph_wizard\instructions.md"
 
         $instructions = Get-Content $instructionsFile -Raw
 

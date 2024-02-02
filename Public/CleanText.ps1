@@ -1,33 +1,23 @@
 function CleanText {
     param(
         [Parameter(ValueFromPipeline)]
-        $UserInput
+        $UserInput,
+        [Switch]$Chat
     )
 
-    Process { $lines += @($UserInput) }
+    Process { $lines += @($UserInput) } 
 
     End {
-        $instructions = @"
-# IDENTITY and PURPOSE
 
-You are an expert at cleaning up broken, misformatted, text, for example: line breaks in weird places, etc. 
+        $instructionsFile = "$PSScriptRoot\..\instructions\clean_text\instructions.md"
 
-# Steps
+        $instructions = Get-Content $instructionsFile -Raw
 
-- Read the entire document and fully understand it.
-- Remove any strange line breaks that disrupt formatting.
-- Do NOT change any content or spelling whatsoever.
-
-# OUTPUT INSTRUCTIONS
-
-- Output the full, properly-formatted text.
-- Do not output warnings or notes—just the requested sections.
-
-# INPUT:
-
-INPUT:
-
-"@
-        $lines | Invoke-OAIChat $instructions
+        if($Chat) {
+            'Time to chat'
+        } 
+        else {
+            $lines | Invoke-OAIChat $instructions
+        }
     }
-}
+} 

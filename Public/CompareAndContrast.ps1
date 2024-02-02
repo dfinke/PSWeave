@@ -1,17 +1,23 @@
 function CompareAndContrast {
     param(
         [Parameter(ValueFromPipeline)]
-        $UserInput
+        $UserInput,
+        [Switch]$Chat
     )
 
-    Process { $lines += @($UserInput) }
+    Process { $lines += @($UserInput) } 
 
     End {
-        $instructions = @"
-# IDENTITY and PURPOSE
 
-Pls be brief. Compare and contrast, pls put it into a markdown table
-"@
-        $lines | Invoke-OAIChat $instructions
+        $instructionsFile = "$PSScriptRoot\..\instructions\compare_and_contrast\instructions.md"
+
+        $instructions = Get-Content $instructionsFile -Raw
+
+        if($Chat) {
+            'Time to chat'
+        } 
+        else {
+            $lines | Invoke-OAIChat $instructions
+        }
     }
-}
+} 

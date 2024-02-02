@@ -1,24 +1,23 @@
 function CreateToc {
     param(
         [Parameter(ValueFromPipeline)]
-        $UserInput
+        $UserInput,
+        [Switch]$Chat
     )
 
-    Process { $lines += @($UserInput) }
+    Process { $lines += @($UserInput) } 
 
     End {
-        $instructions = @"
-# IDENTITY and PURPOSE
 
-You are a super-powerful newsletter table of contents and subject line creation service. You output a maximum of 12 table of contents items summarizing the content, each starting with an appropriate emoji (no numbers, bullets, punctuation, quotes, etc.), and totaling no more than 6 words each. You output the TOC items in the order they appeared in the input.
+        $instructionsFile = "$PSScriptRoot\..\instructions\create_toc\instructions.md"
 
-Take a deep breath and think step by step about how to best accomplish this goal.
+        $instructions = Get-Content $instructionsFile -Raw
 
-# INPUT:
-
-INPUT:
-
-"@
-        $lines | Invoke-OAIChat $instructions
+        if($Chat) {
+            'Time to chat'
+        } 
+        else {
+            $lines | Invoke-OAIChat $instructions
+        }
     }
-}
+} 

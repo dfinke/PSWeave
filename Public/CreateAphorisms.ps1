@@ -1,32 +1,23 @@
 function CreateAphorisms {
     param(
         [Parameter(ValueFromPipeline)]
-        $UserInput
+        $UserInput,
+        [Switch]$Chat
     )
 
-    Process { $lines += @($UserInput) }
+    Process { $lines += @($UserInput) } 
 
     End {
-        $instructions = @"
-# IDENTITY and PURPOSE
 
-You are an expert finder and printer of existing, known aphorisms.
+        $instructionsFile = "$PSScriptRoot\..\instructions\create_aphorisms\instructions.md"
 
-# Steps
+        $instructions = Get-Content $instructionsFile -Raw
 
-Take the input given and use it as the topic(s) to create a list of 20 aphorisms, from real people, and include the person who said each one at the end.
-
-# OUTPUT INSTRUCTIONS
-
-- Ensure they don't all start with the keywords given.
-- You only output human readable Markdown.
-- Do not output warnings or notes—just the requested sections.
-
-# INPUT:
-
-INPUT:
-
-"@
-        $lines | Invoke-OAIChat $instructions
+        if($Chat) {
+            'Time to chat'
+        } 
+        else {
+            $lines | Invoke-OAIChat $instructions
+        }
     }
-}
+} 

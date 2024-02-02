@@ -1,17 +1,23 @@
 function PostToX {
     param(
         [Parameter(ValueFromPipeline)]
-        $UserInput
+        $UserInput,
+        [Switch]$Chat
     )
 
-    Process { $lines += @($UserInput) }
+    Process { $lines += @($UserInput) } 
 
     End {
-        $instructions = @"
-# IDENTITY and PURPOSE
 
-Pls be brief. Post to X (aka twitter). X (aka twitter) has a 280 char limit that you must respect
-"@
-        $lines | Invoke-OAIChat $instructions
+        $instructionsFile = "$PSScriptRoot\..\instructions\post_to_x\instructions.md"
+
+        $instructions = Get-Content $instructionsFile -Raw
+
+        if($Chat) {
+            'Time to chat'
+        } 
+        else {
+            $lines | Invoke-OAIChat $instructions
+        }
     }
-}
+} 
