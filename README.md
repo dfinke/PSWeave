@@ -2,7 +2,7 @@
 ![Alt text](media/psweave.png)
 
 ## In Action
-There are 27 ready to go functions with prompts that you can pipe to.
+There are 27+ ready to go prompts that you can pipe to.
 
 `Get-Command -Module PSWeave`
 
