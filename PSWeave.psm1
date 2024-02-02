@@ -3,6 +3,7 @@ $script:instructionPromptPath = @(
 )
 
 function Weave {
+    [CmdletBinding()]
     param(
         [ValidateSet([InstructionPrompts])]
         $Instructions,
@@ -27,6 +28,8 @@ function Weave {
             'Not yet implemented, coming soon...'
         }
         else {
+            $instructionPrompt = $ExecutionContext.InvokeCommand.ExpandString($instructionPrompt)
+            Write-Verbose $instructionPrompt
             $lines | Invoke-OAIChat $instructionPrompt
         }
     }
