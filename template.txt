@@ -8,9 +8,11 @@ function $functionName {
     Process { `$lines += @(`$UserInput) } 
 
     End {
-        `$instructions = @"
-$instructions
-"@
+
+        `$instructionsFile = "`$PSScriptRoot\..\instructions\$instructionSubDirectory\instructions.md"
+
+        `$instructions = Get-Content `$instructionsFile -Raw
+
         if(`$Chat) {
             'Time to chat'
         } 

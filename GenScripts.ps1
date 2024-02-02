@@ -16,7 +16,7 @@ $template = Get-Content -Raw "$PSScriptRoot\template.txt"
 
 foreach ($function in $functions) {
     $functionName = $function.FunctionName
-    $instructions = Get-Content -Raw $function.Path
+    $instructionSubDirectory = Split-Path -Leaf (Split-Path $function.Path)
 
     $script = $ExecutionContext.InvokeCommand.ExpandString($template)
 
