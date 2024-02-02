@@ -4,7 +4,7 @@
 ## In Action
 There are 27+ ready to go prompts that you can pipe to.
 
-`Get-Command -Module PSWeave`
+`Weave -List`
 
 Also, you can add your own and you can pipe text to the first, get the response from GPT, and pipe that to the next, and so on.
 
@@ -13,11 +13,10 @@ Also, you can add your own and you can pipe text to the first, get the response 
 ```
 
 Contrasts each of those IaC tools based on criteria GPT determines. The output is a markdown table.
-
 All controlled via the prompt, that you can tweak.
 
 
-![Alt text](media/PSWeave-release.gif)
+<!-- ![Alt text](media/PSWeave-release.gif) -->
 
 Inspired by this Python implementation https://github.com/danielmiessler/fabric. Bootstrapped with the prompts from that repo.
 
@@ -29,7 +28,7 @@ Inspired by this Python implementation https://github.com/danielmiessler/fabric.
 
     Then set the environment variable to the key:`$env:OpenAIKey='sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'`
 
-## Are You Augmented?
+## Your Turn
 
 Let's see what you build.
 
