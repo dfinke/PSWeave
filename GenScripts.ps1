@@ -1,4 +1,4 @@
-$functions = Get-ChildItem .\instructions -Recurse instructions.md | Select-Object -First 100 | ForEach-Object {
+$functions = Get-ChildItem .\instructions -Recurse instructions.md | ForEach-Object {
     $dir = Split-Path $_.FullName
     $name = Split-Path -Leaf $dir
 
@@ -12,25 +12,14 @@ $functions = Get-ChildItem .\instructions -Recurse instructions.md | Select-Obje
     }
 }
 
+$template = Get-Content -Raw "$PSScriptRoot\template.txt"
+
 foreach ($function in $functions) {
-    $script = @'
-function {0} {{
-    param(
-        [Parameter(ValueFromPipeline)]
-        $UserInput
-    )
+    $functionName = $function.FunctionName
+    $instructions = Get-Content -Raw $function.Path
 
-    Process {{ $lines += @($UserInput) }}
+    $script = $ExecutionContext.InvokeCommand.ExpandString($template)
 
-    End {{
-        $instructions = @"
-{1}
-"@
-        $lines | Invoke-OAIChat $instructions
-    }}
-}}
-'@ -f $function.FunctionName, (Get-Content $function.Path -Raw)
-
-    $script | Set-Content -Encoding utf8 "$PSScriptRoot\Public\$($function.FunctionName).ps1" 
-    Write-Host "Created $($function.FunctionName)"
+    $script | Set-Content -Encoding utf8 "$PSScriptRoot\Public\$($functionName).ps1"
+    Write-Host "Created $($functionName)"
 }
