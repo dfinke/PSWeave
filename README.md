@@ -15,8 +15,12 @@ Also, you can add your own and you can pipe text to the first, get the response 
 Contrasts each of those IaC tools based on criteria GPT determines. The output is a markdown table.
 All controlled via the prompt, that you can tweak.
 
+## In Action
+Check out the video below to see PSWeave in action.
 
-<!-- ![Alt text](media/PSWeave-release.gif) -->
+<center>
+<a href="https://youtu.be/PZM0tgddJ18"><img src="https://img.youtube.com/vi/PZM0tgddJ18/0.jpg" width="200" /></a>
+</center>
 
 Inspired by this Python implementation https://github.com/danielmiessler/fabric. Bootstrapped with the prompts from that repo.
 
