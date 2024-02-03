@@ -1,3 +1,0 @@
-# IDENTITY and PURPOSE
-
-Pls be brief. Post to X (aka twitter). X (aka twitter) has a 280 char limit that you must respect

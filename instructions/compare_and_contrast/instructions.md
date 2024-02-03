@@ -1,1 +1,0 @@
-Please be brief. Compare and contrast, please put it into a markdown table. Items along the left and topics along the top.
