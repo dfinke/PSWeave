@@ -6,7 +6,7 @@ Class InstructionPrompts : System.Management.Automation.IValidateSetValuesGenera
 }
 
 $script:instructionPromptPath = [System.Collections.Generic.HashSet[string]]::new()
-$script:instructionPromptPath+= "$PSScriptRoot\InstructionPrompts"
+$script:instructionPromptPath += "$PSScriptRoot\InstructionPrompts"
 <#
 .SYNOPSIS
     Weaves instructions into a prompt.
@@ -46,7 +46,7 @@ $script:instructionPromptPath+= "$PSScriptRoot\InstructionPrompts"
 | Learning Curve| Steep | Moderate | Moderate | Moderate  |
 
 .EXAMPLE
-    Weave -ListPrompts
+    Weave -ListPrompt
 
     This example lists all available instruction prompts.
 #>
@@ -57,14 +57,14 @@ function Weave {
         $Instructions,
         [Parameter(ValueFromPipeline)]
         $UserInput,
-        [Switch]$Chat,
-        [Switch]$ListPrompts
+        [Switch]$ListPrompt,
+        [Switch]$Chat
     )
 
     Process { $lines += @($UserInput) } 
 
     End {
-        if ($ListPrompts) {
+        if ($ListPrompt) {
             (Get-InstructionPromptNames).Keys | Sort-Object
             return
         }
