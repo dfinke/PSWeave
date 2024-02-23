@@ -19,10 +19,12 @@ $diff = $fabric.DestinationName | Where-Object { $_ -notin $psweave }
 
 foreach ($targetInstruction in $diff) {
     $source = $fabric | Where-Object { $_.DestinationName -eq $targetInstruction }
-    $instructionContent = Get-Content "$($source.SourceName)\system.md"
+    
     $destinationFile = $source.DestinationName + ".txt"
     $outputPath = "$PSScriptRoot\..\InstructionPrompts\"
     $FullNameOutFile = Join-Path -Path $outputPath -ChildPath $destinationFile    
-    $FullNameOutFile
+
+    $instructionContent = Get-Content "$($source.SourceName)\system.md"
+    $instructionContent | Set-Content $FullNameOutFile
 }
 
