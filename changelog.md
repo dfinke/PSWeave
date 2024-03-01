@@ -1,3 +1,7 @@
+# v0.2.2
+
+- Added more prompts
+
 # v0.2.1
 
 - Added the following prompts in instructions:
