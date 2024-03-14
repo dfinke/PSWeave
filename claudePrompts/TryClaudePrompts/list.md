@@ -1,0 +1,13 @@
+- [x] https://docs.anthropic.com/claude/page/excel-formula-expert
+- [x] https://docs.anthropic.com/claude/page/python-bug-buster
+- [x] https://docs.anthropic.com/claude/page/sql-sorcerer
+- [x] https://docs.anthropic.com/claude/page/git-gud
+- [x] https://docs.anthropic.com/claude/page/function-fabricator
+- [x] https://docs.anthropic.com/claude/page/csv-converter
+- [x] https://docs.anthropic.com/claude/page/emoji-encoder
+- [x] https://docs.anthropic.com/claude/page/pii-purifier
+- [x] https://docs.anthropic.com/claude/page/code-clarifier
+- [x] https://docs.anthropic.com/claude/page/email-extractor
+- [x] https://docs.anthropic.com/claude/page/lesson-planner
+- [x] https://docs.anthropic.com/claude/page/polyglot-superpowers
+- [x] https://docs.anthropic.com/claude/page/spreadsheet-sorcerer
