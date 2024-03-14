@@ -1,3 +1,8 @@
+# v0.2.4
+
+- Added 17 new prompts and matching PowerShell scripts to try them
+    - Took the prompts from the Anthropic Claude Prompt Library https://docs.anthropic.com/claude/prompt-library
+
 # v0.2.3
 
 - Added the following prompts in instructions:
