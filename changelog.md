@@ -1,3 +1,18 @@
+# v0.2.3
+
+- Added the following prompts in instructions:
+    ```
+    CreateCommand
+    CreateKeynote
+    CreateMarkmapVisualization
+    CreateMermaidVisualization
+    CreateThreatModel
+    CreateVideoChapters
+    ExtractIdeas
+    FindHiddenMessage
+    SummarizeGithubChanges
+    ```
+
 # v0.2.2
 
 - Added more prompts
