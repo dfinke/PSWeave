@@ -1,3 +1,9 @@
+# v0.2.5
+
+- Added `Get-WeaveContent` Retrieves the content of a specified instruction file (metaprompt)
+
+- Added `Get-PromptPath` function retrieves the prompt path
+
 # v0.2.4
 
 - Added 17 new prompts and matching PowerShell scripts to try them
