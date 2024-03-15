@@ -7,6 +7,7 @@ Class InstructionPrompts : System.Management.Automation.IValidateSetValuesGenera
 
 $script:instructionPromptPath = [System.Collections.Generic.HashSet[string]]::new()
 $script:instructionPromptPath += "$PSScriptRoot\InstructionPrompts"
+
 <#
 .SYNOPSIS
     Weaves instructions into a prompt.
@@ -141,4 +142,62 @@ function Add-PromptPath {
 
     $Path = (Resolve-Path $Path).Path
     $script:instructionPromptPath += @($Path)
+}
+
+<#
+.SYNOPSIS
+Retrieves the prompt path.
+
+.DESCRIPTION
+The Get-PromptPath function retrieves the prompt path.
+
+.PARAMETER None
+This function does not accept any parameters.
+
+.EXAMPLE
+Get-PromptPath
+This example demonstrates how to use the Get-PromptPath function to retrieve the prompt path.
+
+.OUTPUTS
+[System.String]
+The function returns a string representing the prompt path.
+
+#>
+function Get-PromptPath {
+    [CmdletBinding()]
+    param()
+
+    $script:instructionPromptPath
+}
+
+<#
+.SYNOPSIS
+Retrieves the content of a specified instruction file.
+
+.DESCRIPTION
+The Get-WeaveContent function retrieves the content of a specified instruction file. It searches for the file recursively in the instruction prompt path and returns the content as a string array.
+
+.PARAMETER Instructions
+Specifies the type of instruction prompts to retrieve. Valid values are "InstructionPrompts".
+
+.EXAMPLE
+Get-WeaveContent -Instructions InstructionPrompts
+# Retrieves the content of the "InstructionPrompts.txt" file.
+
+.INPUTS
+None.
+
+.OUTPUTS
+System.String[]
+
+#>
+function Get-WeaveContent {
+    [CmdletBinding()]
+    param(
+        [ValidateSet([InstructionPrompts])]
+        $Instructions
+    )
+
+    $instructionFile = "$($Instructions).txt"
+    Get-ChildItem $script:instructionPromptPath -Recurse $instructionFile | Get-Content 
 }
