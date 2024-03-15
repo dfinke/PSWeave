@@ -1,6 +1,6 @@
 @{
     RootModule        = 'PSWeave.psm1'
-    ModuleVersion     = '0.2.4'
+    ModuleVersion     = '0.2.5'
     GUID              = '5fc57b3b-8500-40be-ac8f-1afe13d72244'
     Author            = 'Douglas Finke'
     CompanyName       = 'Doug Finke'
@@ -17,6 +17,8 @@ PowerShell module that innovates automation with AI to make you more productive
 
     FunctionsToExport = @(
         'Add-PromptPath'
+        'Get-PromptPath'
+        'Get-WeaveContent'
         'Weave'
     )
 
