@@ -1,8 +1,8 @@
 # v0.2.5
 
 - Added `Get-WeaveContent` Retrieves the content of a specified instruction file (metaprompt)
-
 - Added `Get-PromptPath` function retrieves the prompt path
+- Added `MetaPrompt` in claude prompts directory. Thank you to [Pete Cook](https://twitter.com/blindpete) for pointing me to the Claude MetaPrompt.
 
 # v0.2.4
 
