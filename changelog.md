@@ -1,3 +1,7 @@
+# No release
+
+- Thanks [Pete Cook](https://github.com/Blindpete) for the [TryMetaPrompt](claudePrompts/TryClaudePrompts/TryMetaPrompt.ps1) script!
+
 # v0.2.5
 
 - Added `Get-WeaveContent` Retrieves the content of a specified instruction file (metaprompt)
