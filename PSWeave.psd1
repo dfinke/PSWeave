@@ -1,10 +1,10 @@
 @{
     RootModule        = 'PSWeave.psm1'
-    ModuleVersion     = '0.2.5'
+    ModuleVersion     = '0.3.0'
     GUID              = '5fc57b3b-8500-40be-ac8f-1afe13d72244'
     Author            = 'Douglas Finke'
     CompanyName       = 'Doug Finke'
-    Copyright         = 'c 2024 All rights reserved.'
+    Copyright         = '© 2024 All rights reserved.'
 
     Description       = @'
 PowerShell module that innovates automation with AI to make you more productive
@@ -12,7 +12,7 @@ PowerShell module that innovates automation with AI to make you more productive
 
     # Modules that must be imported into the global environment prior to importing this module
     RequiredModules   = @(
-        @{ModuleName = 'PowerShellAIAssistant'; ModuleVersion = "0.1.0" ; GUID = "23da7dfe-f77e-4ca6-8b69-5e69603a73ca" }
+        @{ModuleName = 'PSAI'; ModuleVersion = "0.1.0" ; GUID = "68662d19-a8f1-484f-b1b7-3bf0e8a436df" }
     )
 
     FunctionsToExport = @(
