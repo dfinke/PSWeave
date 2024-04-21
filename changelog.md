@@ -1,3 +1,7 @@
+# v0.3.0
+
+- Updated dependencies to use [PSAI](https://github.com/dfinke/PSAI)
+
 # No release
 
 - Thanks [Pete Cook](https://github.com/Blindpete) for the [TryMetaPrompt](claudePrompts/TryClaudePrompts/TryMetaPrompt.ps1) script!
