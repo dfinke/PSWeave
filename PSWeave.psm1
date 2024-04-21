@@ -149,21 +149,21 @@ function Add-PromptPath {
 Retrieves the prompt path.
 
 .DESCRIPTION
-The Get-PromptPath function retrieves the prompt path.
+The Get-WeavePromptPath function retrieves the prompt path.
 
 .PARAMETER None
 This function does not accept any parameters.
 
 .EXAMPLE
-Get-PromptPath
-This example demonstrates how to use the Get-PromptPath function to retrieve the prompt path.
+Get-WeavePromptPath
+This example demonstrates how to use the Get-WeavePromptPath function to retrieve the prompt path.
 
 .OUTPUTS
 [System.String]
 The function returns a string representing the prompt path.
 
 #>
-function Get-PromptPath {
+function Get-WeavePromptPath {
     [CmdletBinding()]
     param()
 

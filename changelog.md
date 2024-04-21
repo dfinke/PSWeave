@@ -1,3 +1,7 @@
+# v0.3.1
+
+- Rename Get-PromptPath to Get-WeavePromptPath
+
 # v0.3.0
 
 - Updated dependencies to use [PSAI](https://github.com/dfinke/PSAI)
