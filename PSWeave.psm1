@@ -79,7 +79,7 @@ function Weave {
         else {
             $instructionPrompt = $ExecutionContext.InvokeCommand.ExpandString($instructionPrompt)
             Write-Verbose $instructionPrompt
-            $lines | Invoke-OAIChat $instructionPrompt
+            $lines | Invoke-OAIChat -Instructions $instructionPrompt
         }
     }
 } 
